@@ -1,10 +1,10 @@
-# Co&Co Sort
+# Co Sort
 
 [![Smoke test](https://github.com/advait482-afk/co-sort/actions/workflows/smoke-test.yml/badge.svg)](https://github.com/advait482-afk/co-sort/actions/workflows/smoke-test.yml)
 
 **Turn a folder of `IMG_4821.MOV` files into named files in sensible folders.**
 
-Co&Co Sort is an open-source skill for AI agents (Claude Code, the Claude desktop app, and any agent that follows `SKILL.md` or `AGENTS.md`). Drop a whole shoot into one folder, say **"sort"**, and the agent looks at every video, photo and audio file, gives each one a descriptive name, and moves it into folders.
+Co Sort is an open-source skill for AI agents (Claude Code, the Claude desktop app, and any agent that follows `SKILL.md` or `AGENTS.md`). Drop a whole shoot into one folder, say **"sort"**, and the agent looks at every video, photo and audio file, gives each one a descriptive name, and moves it into folders.
 
 - Runs on your own computer. Your footage is never uploaded.
 - Never deletes a file. Every move is logged and can be undone with one command.
