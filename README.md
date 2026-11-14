@@ -29,7 +29,7 @@ Sort me/                              Sort me/
 
 ## Why
 
-Editors, content teams and creators lose hours renaming phone and camera dumps before they can start cutting. Filenames like `IMG_4821.MOV` say nothing about what is in the clip. Co&Co Sort does the first pass for you: it watches, listens, names and files, and leaves you a visual report to check.
+Editors, content teams and creators lose hours renaming phone and camera dumps before they can start cutting. Filenames like `IMG_4821.MOV` say nothing about what is in the clip. Co Sort does the first pass for you: it watches, listens, names and files, and leaves you a visual report to check.
 
 ## How it works
 
