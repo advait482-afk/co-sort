@@ -1,0 +1,47 @@
+name: Smoke test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  smoke:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install ffmpeg (Linux)
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install ffmpeg (macOS)
+        if: runner.os == 'macOS'
+        run: brew install ffmpeg
+
+      - name: Install ffmpeg (Windows)
+        if: runner.os == 'Windows'
+        run: choco install ffmpeg -y --no-progress
+
+      - name: Install Python packages
+        run: python -m pip install Pillow
+
+      - name: Run smoke test
+        run: python tests/smoke_test.py
+
+      # Same test with an ASCII-only console, failing on any file read or write
+      # that doesn't say UTF-8. Catches the bugs that break non-English file names.
+      - name: Run smoke test (strict encoding)
+        env:
+          PYTHONIOENCODING: ascii
+          PYTHONWARNDEFAULTENCODING: "1"
+          PYTHONWARNINGS: error::EncodingWarning
+        run: python tests/smoke_test.py
